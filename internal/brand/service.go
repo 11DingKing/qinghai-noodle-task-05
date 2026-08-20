@@ -32,6 +32,8 @@ func (s *Service) CheckMenuName(_ context.Context, store StoreProfile) error {
 }
 
 func (s *Service) CheckOperatorTraining(_ context.Context, store StoreProfile, course string) error {
+	store = operatorTrainingSnapshot(store)
+
 	return ValidateOperatorTraining(store, course, s.now())
 }
 

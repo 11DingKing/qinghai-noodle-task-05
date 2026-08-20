@@ -86,3 +86,9 @@ func ValidateLicenseTransfer(license BrandLicense, currentOwner, proposedOwner s
 	}
 	return nil
 }
+
+func operatorTrainingSnapshot(store StoreProfile) StoreProfile {
+	clone := store
+	clone.Operators = nil
+	return clone
+}
